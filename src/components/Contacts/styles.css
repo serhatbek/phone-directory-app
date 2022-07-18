@@ -1,0 +1,49 @@
+.App {
+  background-color: rgb(36, 32, 32);
+}
+
+#container {
+  width: 400px;
+  padding: 20px;
+  background-color: aliceblue;
+  border-radius: 4px;
+  box-shadow: 0 8px 20px 5px black;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 5px;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.list {
+  margin: 15px 0;
+}
+
+.list > li {
+  background-color: antiquewhite;
+  margin-bottom: 2px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.form__row {
+  margin-bottom: 5px;
+}
+
+.form__action button {
+  width: 100%;
+  padding: 8px 0;
+  text-align: center;
+  border-radius: 4px;
+  background-color: aqua;
+}
