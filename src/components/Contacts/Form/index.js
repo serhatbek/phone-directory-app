@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 
-const firstValue = { fullname: '', phone_number: '' };
+const initialValues = { fullname: '', phone_number: '' };
 
-const Form = ({ addContacts, oldContacts }) => {
-  const [form, setForm] = useState(firstValue);
+const Form = ({ addContact, contacts }) => {
+  const [form, setForm] = useState(initialValues);
 
   useEffect(() => {
-    setForm(firstValue);
-  }, [oldContacts]);
+    setForm(initialValues);
+  }, [contacts]);
 
-  const onInputChange = (e) => {
+  const onChangeInput = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -19,8 +19,9 @@ const Form = ({ addContacts, oldContacts }) => {
     if (form.fullname === '' || form.phone_number === '') {
       return false;
     }
+    // console.log(form);
 
-    addContacts([...oldContacts, form]);
+    addContact([...contacts, form]);
   };
 
   return (
@@ -28,23 +29,23 @@ const Form = ({ addContacts, oldContacts }) => {
       <div className='form__row'>
         <input
           name='fullname'
-          placeholder='Enter Your Name'
-          autoComplete='off'
+          placeholder='Full Name'
           value={form.fullname}
-          onChange={onInputChange}
+          onChange={onChangeInput}
         />
       </div>
+
       <div className='form__row'>
         <input
           name='phone_number'
-          placeholder='Enter Your Surname'
-          autoComplete='off'
+          placeholder='Phone Number'
           value={form.phone_number}
-          onChange={onInputChange}
+          onChange={onChangeInput}
         />
       </div>
+
       <div className='form__action'>
-        <button>Submit</button>
+        <button>ADD</button>
       </div>
     </form>
   );
